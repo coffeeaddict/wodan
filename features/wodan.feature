@@ -1,9 +1,10 @@
-Feature: something something
-  In order to something something
-  A user something something
-  something something something
+Feature: Process monitoring
+  In order to keep track of my processes
+  As an administrator
+  I want a monitoring tool
 
-  Scenario: something something
-    Given inspiration
-    When I create a sweet new gem
-    Then everyone should see how awesome I am
+  Scenario: Running 'system' daemon
+    Given a running daemon: foo
+    When I start a task for: foo
+    Then 'foo' should still be running
+    And wodan should say 'foo' is 'OK'
