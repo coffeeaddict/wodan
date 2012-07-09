@@ -40,7 +40,7 @@ Awesome.
 
 ## Justification
 
-Either I am to stupid for God, or God has failed in it's intents and purposes.
+Either I am too stupid for God, or God has failed in it's intents and purposes.
 
 Everytime I try to setup a functional install of God, it just fails to work for
 me.
@@ -64,7 +64,7 @@ Odin.
 
 ![Wodan, riding a horse with his wolves and ravens](http://coffeeaddict.github.com/wodan/wodan.jpg)
 
-## Contributing to wodaan
+## Contributing to wodan
  
   - Check out the latest master to make sure the feature has not been
     implemented or the bug hasn't been fixed yet.
