@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Wodan by coffeeaddict</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/coffeeaddict/wodan">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Wodan</h1>
+            <h2>A simpler god, less bells, more whistles</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/coffeeaddict/wodan/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/coffeeaddict/wodan/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>wodan</h1>
+
+<p>A simpler god, less bells, more whistles and two wolves and ravens named
+Geri, Freki, Hugin and Munin.</p>
+
+<p>Awesome.</p>
+
+<h2>DSL</h2>
+
+<div class="highlight">
+<pre>  <span class="c1"># let wodan watch</span>
+  <span class="no">Wodan</span><span class="o">.</span><span class="n">watch</span> <span class="k">do</span> <span class="o">|</span><span class="n">wodan</span><span class="o">|</span>
+    <span class="c1"># a task</span>
+    <span class="n">wodan</span><span class="o">.</span><span class="n">task</span> <span class="ss">:mysql</span> <span class="k">do</span> <span class="o">|</span><span class="n">task</span><span class="o">|</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">pid_file</span> <span class="s2">"/var/run/mysqld/mysqld.pid"</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">log_file</span> <span class="s2">"/var/log/mysql.log"</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">start</span>    <span class="s2">"service mysql start"</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">stop</span>     <span class="s2">"service mysql stop"</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">restart</span>  <span class="s2">"service mysql restart"</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">limits</span>   <span class="p">{</span>
+        <span class="ss">:memory</span> <span class="o">=&gt;</span> <span class="mi">100</span>  <span class="c1"># megabytes</span>
+        <span class="ss">:cpu</span>    <span class="o">=&gt;</span> <span class="mi">75</span>   <span class="c1"># percent</span>
+      <span class="p">}</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">notify</span>    <span class="s2">"dba@mydomain.com"</span>  <span class="c1"># notify of events</span>
+    <span class="k">end</span>
+
+    <span class="c1"># and another task</span>
+    <span class="n">wodan</span><span class="o">.</span><span class="n">task</span> <span class="ss">:rails_app</span> <span class="k">do</span> <span class="o">|</span><span class="n">task</span><span class="o">|</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">dir</span>       <span class="s2">"/home/rails/app"</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">daemonize</span> <span class="s2">"bundle exec rails server"</span> <span class="c1"># wrap and daemonize this cmd</span>
+      <span class="n">task</span><span class="o">.</span><span class="n">notify</span>    <span class="s2">"development@mydomain.com"</span>
+    <span class="k">end</span>
+
+    <span class="c1"># tell wodan how to deal with the tasks</span>
+    <span class="n">wodan</span><span class="o">.</span><span class="n">keep_alive</span><span class="p">(</span><span class="ss">:mysql</span><span class="p">,</span> <span class="ss">:rails_app</span><span class="p">)</span>
+    <span class="n">wodan</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="ss">:some_other</span><span class="p">)</span>   <span class="c1"># just start at wodan start and forget</span>
+
+    <span class="n">wodan</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="s1">'hostmaster@mydomain.com'</span><span class="p">)</span>  <span class="c1"># notify of all events</span>
+  <span class="k">end</span>
+</pre>
+</div>
+
+
+<h2>Justification</h2>
+
+<p>Either I am to stupid for God, or God has failed in it's intents and purposes.</p>
+
+<p>Everytime I try to setup a functional install of God, it just fails to work for
+me.</p>
+
+<p>All I ever wanted is a process monitor that:</p>
+
+<ul>
+<li>makes sure processes run</li>
+<li>keeps those processes within bounds</li>
+<li>notifies me (or a bunch of people) of significant events 
+(start, stop, restart)</li>
+</ul><h2>State</h2>
+
+<p>Wodan is not in a production-ready state. In fact, at the moment of writing
+this, all I have is the DSL to which I need to write tests and code.</p>
+
+<h2>WTF is Wodan</h2>
+
+<p>Wodan is the Germanic/Anglo-saxon counterpart of the (well) known Norge god
+Odin.</p>
+
+<p><img src="wodan.jpg" alt="Wodan, riding a horse with his wolves and ravens"></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/coffeeaddict">coffeeaddict</a> can be found on <a href="https://github.com/coffeeaddict/wodan">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
