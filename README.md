@@ -3,7 +3,7 @@
 A simpler god, less bells, more whistles
 
 ## DSL
-
+```ruby
   # let wodan watch
   Wodan.watch do |wodan|
     # a task
@@ -33,3 +33,4 @@ A simpler god, less bells, more whistles
 
     wodan.notify('hostmaster@mydomain.com')  # notify off all events
   end
+```
