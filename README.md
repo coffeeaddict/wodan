@@ -62,4 +62,24 @@ this, all I have is the DSL to which I need to write tests and code.
 Wodan is the Germanic/Anglo-saxon counterpart of the (well) known Norge god
 Odin.
 
-![Wodan, riding a horse with his wolves and ravens](wodan.jpg)
+![Wodan, riding a horse with his wolves and ravens](http://coffeeaddict.github.com/wodan/wodan.jpg)
+
+## Contributing to wodaan
+ 
+  - Check out the latest master to make sure the feature has not been
+    implemented or the bug hasn't been fixed yet.
+  - Check out the issue tracker to make sure someone already hasn't requested
+    it and/or contributed it.
+  - Fork the project.
+  - Start a feature/bugfix branch.
+  - Commit and push until you are happy with your contribution.
+  - Make sure to add tests for it. This is important so I don't break it in a
+    future version unintentionally.
+  - Please try not to mess with the Rakefile, version, or history. If you want
+    to have your own version, or is otherwise necessary, that is fine, but
+    please isolate to its own commit so I can cherry-pick around it.
+
+## Copyright
+
+Copyright (c) 2012 Hartog C. de Mik. See LICENSE.txt for
+further details.
